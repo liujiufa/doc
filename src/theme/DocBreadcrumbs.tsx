@@ -20,9 +20,6 @@ export default function DocBreadcrumbs(props) {
   return (
     <Container>
       <OriginalDocBreadcrumbs {...props} />
-      <SentimentTrackingContainer>
-        <SentimentTracking analyticsSection={DocsSentimentSection.TOP_SECTION} />
-      </SentimentTrackingContainer>
     </Container>
   )
 }

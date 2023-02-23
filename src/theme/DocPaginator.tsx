@@ -13,7 +13,7 @@ export default function DocPaginator(props) {
   return (
     <>
       <SentimentTrackingContainer>
-        <SentimentTracking analyticsSection={DocsSentimentSection.BOTTOM_SECTION} />
+        {/* <SentimentTracking analyticsSection={DocsSentimentSection.BOTTOM_SECTION} /> */}
       </SentimentTrackingContainer>
       <OriginalDocPaginator {...props} />
     </>

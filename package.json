@@ -1,6 +1,7 @@
 {
   "name": "@uniswap/docs",
-  "description": "Uniswap docs",
+  "description": "te",
+  "homepage": ".",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -73,5 +74,10 @@
     "npm": "please-use-yarn",
     "node": "14",
     "yarn": ">=1.22"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Uniswap/docs.git",
+  "author": "liujiufa <1376315255@qq.com>",
+  "license": "MIT"
 }

@@ -6,7 +6,6 @@ import styled from '@emotion/styled'
 import Discord from '@site/static/img/discord.svg'
 import GitHub from '@site/static/img/github.svg'
 import Npm from '@site/static/img/npm.svg'
-import UGP from '@site/static/img/UGP.png'
 import Layout from '@theme/Layout'
 import ThemedImage from '@theme/ThemedImage'
 import { TraceEvent } from '@uniswap/analytics'
@@ -23,107 +22,32 @@ import SearchBarWithAnalytics from '../theme/SearchBar'
 
 export const actions = [
   {
-    title: 'What is Uniswap',
+    title: 'NFT介绍',
     icon: Info,
-    to: '/concepts/overview',
-    text: `Learn about the core concepts of the Uniswap Protocol, Swaps, Pools, Concentrated Liquidity and more.`,
+    to: '/concepts/NFT/overview',
+    text: `1.什么是NFT?`,
   },
   {
-    title: 'Integrate with Uniswap',
+    title: 'NFT交易',
     icon: HelpCircle,
-    to: '/sdk/v3/overview',
-    text: `Learn how to integrate with Uniswap by building a dApp through guided examples.`,
+    to: '/contracts/v1/guides/connect-to-uniswap',
+    text: `1.如何购买 NFT?2.如何出售NFT?`,
   },
   {
-    title: 'The Uniswap smart contracts',
+    title: '加密钱包',
     icon: BookOpen,
-    to: '/contracts/v3/overview',
-    text: `Learn about the architecture of the Uniswap Protocol smart contracts through guided examples.`,
+    to: '/sdk/v1/overview',
+    text: `1.什么是加密钱包?2.加密钱包的类型。3.如何设置加密钱包?4.如何为您的加密钱包提供资金?`,
+  },
+  {
+    title: '区块gas费',
+    icon: BookOpen,
+    to: '/api/v1/overview',
+    text: `1.什么是gas?2.汽油费的用途是什么?3.什么会影响汽油费以及它们是如何计算的?4.gas费的存在是有意义的。`,
   },
 ]
 
-export const developerLinks = [
-  {
-    title: 'uniswap-v3-core',
-    href: 'https://github.com/Uniswap/uniswap-v3-core',
-    icon: GitHub,
-  },
-  {
-    title: 'uniswap-v3-sdk',
-    href: 'https://github.com/Uniswap/uniswap-v3-sdk',
-    icon: GitHub,
-  },
-  {
-    title: 'uniswap-v3-periphery',
-    href: 'https://github.com/Uniswap/uniswap-v3-periphery',
-    icon: GitHub,
-  },
-  {
-    title: 'Deployment addresses',
-    href: 'https://github.com/Uniswap/uniswap-v3-periphery/blob/main/deploys.md',
-    icon: GitHub,
-  },
-  {
-    title: 'widgets',
-    href: 'https://www.npmjs.com/package/@uniswap/widgets',
-    icon: Npm,
-  },
-]
 
-export const dAppGuides = [
-  {
-    title: 'Fetch token prices',
-    text: 'Fetch the price of tokens in a specific Pool',
-    to: 'sdk/v3/guides/quoting',
-  },
-  {
-    title: 'Create a Trade',
-    text: 'Fetch a Quote for a Trade and execute the Trade',
-    to: '/sdk/v3/guides/trading',
-  },
-  {
-    title: 'Route trades',
-    text: 'Use Routing to get optimized prices for your Trades',
-    to: '/sdk/v3/guides/routing',
-  },
-  {
-    title: 'Provide liquidity',
-    text: "Contribute to a Pool's liquidity by using tokens to earn fees",
-    to: '/sdk/v3/guides/liquidity/minting',
-  },
-  {
-    title: 'UI Component',
-    text: 'Integrate with the Swap Widget, a React component that works out of the box ',
-    to: '/sdk/swap-widget/overview',
-  },
-]
-export const smartContractGuides = [
-  {
-    title: 'Setup your environment',
-    text: 'Prepare your local environment by installing the required dependencies',
-    to: '/contracts/v3/guides/local-environment',
-  },
-  {
-    title: 'Implement a Swap',
-    text: 'Start swapping from a smart contract in Solidity',
-    to: '/contracts/v3/guides/swaps/single-swaps',
-  },
-  {
-    title: 'Provide Liquidity',
-    text: 'Provide liquidity from a smart contract in Solidity',
-    to: '/contracts/v3/guides/providing-liquidity/setting-up',
-  },
-  {
-    title: 'Mine Liquidity',
-    text: 'Start Mining liquidity from a smart contract in Solidity',
-    to: '/contracts/v3/guides/liquidity-mining/overview',
-  },
-  {
-    title: 'Implement Flash Swaps',
-    text: 'Implement Flash Swaps from a smart contract in Solidity',
-    to: '/contracts/v3/guides/flash-integrations/inheritance-constructors',
-  },
-]
 
 const Container = styled.div`
   display: flex;
@@ -310,7 +234,7 @@ export default function Home() {
               alignItems: 'center',
             }}
           >
-            <h1 style={{ fontWeight: 600 }}> Welcome to Uniswap Docs</h1>
+            <h1 style={{ fontWeight: 600 }}> Welcome to HABITAT Docs</h1>
             <HideMedium>
               <SearchBarWithAnalytics />
             </HideMedium>
@@ -348,196 +272,6 @@ export default function Home() {
             ))}
           </Row>
         </DocsHeader>
-        <TwoRow
-          style={{
-            gap: '56px',
-            marginTop: '4rem',
-          }}
-        >
-          <div>
-            <h2>Integrate your dApp</h2>
-            <p>Explore these guided tutorials to get started integrating with Uniswap in your dApp.</p>
-            <div>
-              {dAppGuides.map((action) => (
-                <TraceEvent
-                  key={action.to}
-                  element={action.to}
-                  events={[BrowserEvent.onClick]}
-                  name={SharedEventName.PAGE_CLICKED}
-                  section={SectionName.DAPP_LINKS}
-                >
-                  <Link style={{ textDecoration: 'none' }} key={action.title} to={action.to}>
-                    <Card key={action.title} style={{ marginBottom: '1rem' }}>
-                      <LinkRow>
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                          <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
-                        </div>
-                        <LinkIconWrapper>
-                          <LinkIcon />
-                        </LinkIconWrapper>
-                      </LinkRow>
-                      <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
-                    </Card>
-                  </Link>
-                </TraceEvent>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h2>Integrate your smart contracts</h2>
-            <p>Explore these guided tutorials to get started integrating with Uniswap in your smart contracts.</p>
-            <div>
-              {smartContractGuides.map((action) => (
-                <TraceEvent
-                  key={action.to}
-                  element={action.to}
-                  events={[BrowserEvent.onClick]}
-                  name={SharedEventName.PAGE_CLICKED}
-                  section={SectionName.SMART_CONTRACT_LINKS}
-                >
-                  <Link style={{ textDecoration: 'none' }} key={action.title} to={action.to}>
-                    <Card key={action.title} style={{ marginBottom: '1rem' }}>
-                      <LinkRow>
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                          <h3 style={{ marginBottom: '0rem' }}>{action.title}</h3>
-                        </div>
-                        <LinkIconWrapper>
-                          <LinkIcon />
-                        </LinkIconWrapper>
-                      </LinkRow>
-                      <p style={{ marginBottom: '0rem', fontWeight: 300 }}>{action.text}</p>
-                    </Card>
-                  </Link>
-                </TraceEvent>
-              ))}
-            </div>
-          </div>
-        </TwoRow>
-        <hr />
-        <TwoRow
-          style={{
-            gap: '48px',
-            alignItems: 'center',
-          }}
-        >
-          <StyledImage
-            style={{ maxHeight: '400px' }}
-            sources={{
-              light: useBaseUrl('/img/use.png'),
-              dark: useBaseUrl('/img/use2.png'),
-            }}
-          />
-          <div>
-            <h2>Developer Links</h2>
-            {developerLinks.map((action) => (
-              <TraceEvent
-                key={action.href}
-                element={action.href}
-                name={SharedEventName.PAGE_CLICKED}
-                events={[BrowserEvent.onClick]}
-                section={SectionName.DEVELOPER_LINKS}
-              >
-                <Link key={action.href} to={action.href}>
-                  <Card key={action.href} style={{ marginBottom: '0.5rem' }}>
-                    <LinkRow>
-                      <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <IconWrapper>
-                          <StyledIcon>
-                            <action.icon style={{ width: '24px' }} />
-                          </StyledIcon>
-                        </IconWrapper>
-                        {action.title}
-                      </div>
-                      <LinkIconWrapper>
-                        <LinkIcon />
-                      </LinkIconWrapper>
-                    </LinkRow>
-                  </Card>
-                </Link>
-              </TraceEvent>
-            ))}
-          </div>
-        </TwoRow>
-        <hr />
-        <Row>
-          <TraceEvent
-            events={[BrowserEvent.onClick]}
-            element={ElementName.DISCORD}
-            section={SectionName.BOTTOM_MENU_LINKS}
-            name={SharedEventName.PAGE_CLICKED}
-          >
-            <Link style={{ textDecoration: 'none' }} href={'https://discord.gg/ybKVQUWb4s'}>
-              <CenterCard>
-                <Discord style={{ width: '48px', height: '48px' }} />
-                <div>
-                  <h3>Discord</h3>
-                  <p>Join our Developer Community.</p>
-                </div>
-              </CenterCard>
-            </Link>
-          </TraceEvent>
-          <TraceEvent
-            events={[BrowserEvent.onClick]}
-            element={ElementName.GRANTS}
-            section={SectionName.BOTTOM_MENU_LINKS}
-            name={SharedEventName.PAGE_CLICKED}
-          >
-            <Link style={{ textDecoration: 'none' }} href={'https://gov.uniswap.org/'}>
-              <CenterCard>
-                <MessageCircle style={{ width: '48px', height: '48px' }} />
-                <div>
-                  <h3>Forum</h3>
-                  <p>Discuss governance and more.</p>
-                </div>
-              </CenterCard>
-            </Link>
-          </TraceEvent>
-          <TraceEvent
-            events={[BrowserEvent.onClick]}
-            section={SectionName.BOTTOM_MENU_LINKS}
-            element={ElementName.GITHUB}
-            name={SharedEventName.PAGE_CLICKED}
-          >
-            <Link style={{ textDecoration: 'none' }} href={'https://github.com/Uniswap'}>
-              <CenterCard>
-                <StyledIcon>
-                  <GitHub style={{ width: '48px', height: '48px' }} />
-                </StyledIcon>
-                <div>
-                  <h3>GitHub</h3>
-                  <p>View all Uniswap repositories.</p>
-                </div>
-              </CenterCard>
-            </Link>
-          </TraceEvent>
-        </Row>
-        <Link
-          style={{
-            textDecoration: 'none',
-            maxWidth: '960px',
-            margin: '0 auto 4rem auto',
-            width: '100%',
-          }}
-          href={'https://unigrants.org/'}
-        >
-          <WideCard
-            style={{
-              alignItems: 'center',
-              flexDirection: 'row',
-              justifyContent: 'center',
-              gap: '24px',
-            }}
-          >
-            <img src={UGP} width={'120px'} />
-            <div>
-              <h2 style={{ marginBottom: '0.5rem' }}>Uniswap Grants Program</h2>
-              <p style={{ margin: '0rem' }}>
-                Uniswap Governance offers grant funding for people who are building apps, tools, and activities for
-                Uniswap Protocol users, builders, and community members.{' '}
-              </p>
-            </div>
-          </WideCard>
-        </Link>
       </Container>
     </Layout>
   )

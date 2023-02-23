@@ -11,15 +11,13 @@ module.exports = {
     // From node
     nodeEnv: process.env.NODE_ENV,
   },
-  title: 'Uniswap',
+  title: 'HABITAT',
   tagline: 'Documentation and Guides',
-  url: 'https://docs.uniswap.org/',
-  baseUrl: '/',
+  url: 'http://192.168.2.109:3000/',
+  baseUrl: '/doc/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.png',
-  organizationName: 'Uniswap', // Usually your GitHub org/user name.
-  projectName: 'Uniswap-docs', // Usually your repo name.
   themeConfig: {
     image: 'img/twitter_card_bg.jpg',
     prism: {
@@ -31,155 +29,37 @@ module.exports = {
       appId: 'S0IDD0YGLZ',
     },
     navbar: {
-      title: 'Uniswap Docs',
+      title: 'HABITAT Docs',
       logo: {
-        alt: 'Uniswap Unicorn',
-        src: 'img/uni_dark_icon.svg',
+        alt: 'HABITAT Unicorn',
+        src: 'img/logo1.svg',
       },
       items: [
         {
-          to: '/concepts/overview',
-          label: 'Concepts',
+          to: '/concepts/NFT/overview',
+          label: 'NFT介绍',
           position: 'left',
           className: 'V3_active',
         },
         {
-          to: '/contracts/v3/overview',
-          label: 'Contracts',
+          to: '/contracts/v1/guides/connect-to-uniswap',
+          label: 'NFT交易',
           position: 'left',
           className: 'V3_active',
         },
         {
-          to: '/sdk/v3/overview',
-          label: 'SDKs',
+          to: '/sdk/v1/overview',
+          label: '加密钱包',
           position: 'left',
           className: 'V3_active',
         },
         {
-          to: '/api/subgraph/overview',
-          label: 'APIs',
+          to: '/api/v1/overview',
+          label: '区块gas费',
           position: 'left',
           className: 'V3_active',
-        },
-        {
-          label: 'Give Feedback',
-          to: 'https://forms.gle/13XtjmkwdXQ2jMn26',
-          position: 'right',
-          className: 'persistent',
-        },
-        {
-          label: 'Whitepaper',
-          to: 'https://uniswap.org/whitepaper-v3.pdf',
-          position: 'right',
-          className: 'persistent',
-        },
-        {
-          href: 'https://github.com/uniswap/uniswap-docs',
-          label: 'GitHub',
-          position: 'right',
-          className: 'persistent',
-        },
-        {
-          href: 'https://unigrants.org/',
-          label: 'Grants',
-          position: 'right',
-          className: 'persistent',
         },
       ],
-    },
-    footer: {
-      // style: "dark",
-      links: [
-        {
-          title: 'Developers',
-          items: [
-            {
-              label: 'Feedback',
-              href: 'https://forms.gle/13XtjmkwdXQ2jMn26',
-            },
-            {
-              label: 'Bug Bounty',
-              href: 'https://github.com/Uniswap/uniswap-v3-periphery/blob/main/bug-bounty.md',
-            },
-            {
-              label: '#dev-chat',
-              href: 'https://discord.gg/ybKVQUWb4s',
-            },
-            {
-              label: 'Whitepaper',
-              href: 'https://uniswap.org/whitepaper-v3.pdf',
-            },
-          ],
-        },
-        {
-          title: 'Github',
-          items: [
-            {
-              label: 'uniswap-v3-core',
-              href: 'https://github.com/Uniswap/uniswap-v3-core',
-            },
-            {
-              label: 'uniswap-v3-sdk',
-              href: 'https://github.com/Uniswap/uniswap-v3-sdk',
-            },
-            {
-              label: 'uniswap-v3-periphery',
-              href: 'https://github.com/Uniswap/uniswap-v3-periphery',
-            },
-            {
-              label: 'Deployment addresses',
-              href: 'https://github.com/Uniswap/uniswap-v3-periphery/blob/main/deploys.md',
-            },
-          ],
-        },
-        {
-          title: 'Ecosystem',
-          items: [
-            {
-              label: 'Home',
-              href: 'https://uniswap.org/',
-            },
-            {
-              label: 'App',
-              href: 'https://app.uniswap.org/',
-            },
-            {
-              label: 'Analytics',
-              href: 'https://info.uniswap.org/home',
-            },
-            {
-              label: 'Token Lists',
-              href: 'https://tokenlists.org/',
-            },
-            {
-              label: 'Brand Assets',
-              href: 'https://uniswap.org/Uniswap_brand_assets.zip',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Governance',
-              href: 'https://gov.uniswap.org/',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/ybKVQUWb4s',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/Uniswap',
-            },
-            {
-              label: 'Blog',
-              href: 'https://uniswap.org/blog/',
-            },
-          ],
-        },
-      ],
-      // copyright: `unlicensed`,
     },
     colorMode: {
       // "light" | "dark"
@@ -266,56 +146,35 @@ module.exports = {
       {
         redirects: [
           // 1/9/23 V3 SDK Guide Redirects
-          {
-            to: '/sdk/v3/guides/background',
-            from: '/sdk/v3/guides/quick-start',
-          },
-          {
-            to: '/sdk/v3/guides/quoting',
-            from: ['/sdk/v3/guides/creating-a-pool', '/sdk/v3/guides/fetching-prices'],
-          },
-          {
-            to: '/sdk/v3/guides/trading',
-            from: '/sdk/v3/guides/creating-a-trade',
-          },
-          {
-            to: '/sdk/v3/guides/routing',
-            from: '/sdk/v3/guides/auto-router',
-          },
-          {
-            to: '/sdk/v3/guides/liquidity/modifying-position',
-            from: ['/sdk/v3/guides/liquidity/adding', '/sdk/v3/guides/liquidity/removing'],
-          },
+          // {
+          //   to: '/sdk/v3/guides/background',
+          //   from: '/sdk/v3/guides/quick-start',
+          // },
+          // {
+          //   to: '/sdk/v3/guides/quoting',
+          //   from: ['/sdk/v3/guides/creating-a-pool', '/sdk/v3/guides/fetching-prices'],
+          // },
+          // {
+          //   to: '/sdk/v3/guides/trading',
+          //   from: '/sdk/v3/guides/creating-a-trade',
+          // },
+          // {
+          //   to: '/sdk/v3/guides/routing',
+          //   from: '/sdk/v3/guides/auto-router',
+          // },
+          // {
+          //   to: '/sdk/v3/guides/liquidity/modifying-position',
+          //   from: ['/sdk/v3/guides/liquidity/adding', '/sdk/v3/guides/liquidity/removing'],
+          // },
         ],
         createRedirects(existingPath) {
-          // V3 Redirects
-          if (existingPath.includes('/concepts/overview')) {
-            return [existingPath.replace('/concepts/overview', '/protocol/introduction')]
-          }
-          if (existingPath.includes('/contracts/v3/reference')) {
-            return [existingPath.replace('/contracts/v3/reference', '/protocol/reference')]
-          }
-          if (existingPath.includes('/contracts/v3/guides')) {
-            return [existingPath.replace('/contracts/v3/guides', '/protocol/guides')]
-          }
-          // V2 Redirects
-          if (existingPath.includes('/contracts/v2/reference')) {
-            return [existingPath.replace('/contracts/v2/reference', '/protocol/V2/reference')]
-          }
-          if (existingPath.includes('/contracts/v2/guides')) {
-            return [existingPath.replace('/contracts/v2/guides', '/protocol/V2/guides')]
-          }
-          // Permit2 Redirects
-          if (existingPath.includes('/contracts/permit2')) {
-            return [existingPath.replace('/contracts/permit2', '/protocol/permit2')]
-          }
           // v3-sdk Redirects
-          if (existingPath.includes('/sdk/v3/overview')) {
-            return [existingPath.replace('/sdk/v3/overview', '/sdk/introduction')]
-          }
-          if (existingPath.includes('/sdk/v3/guides')) {
-            return [existingPath.replace('/sdk/v3/guides', '/sdk/guides')]
-          }
+          // if (existingPath.includes('/sdk/v3/overview')) {
+          //   return [existingPath.replace('/sdk/v3/overview', '/sdk/introduction')]
+          // }
+          // if (existingPath.includes('/sdk/v3/guides')) {
+          //   return [existingPath.replace('/sdk/v3/guides', '/sdk/guides')]
+          // }
           // swap-widgets Redirects
           if (existingPath.includes('/sdk/swap-widget/overview')) {
             return [existingPath.replace('/sdk/swap-widget/overview', '/sdk/widgets/swap-widget')]

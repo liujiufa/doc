@@ -193,8 +193,8 @@ html[data-theme='light'] .navbar {
 }
 
 .navbar__logo {
-  height: 20px;
-  width: 20px;
+  height: 60px;
+  width: 30px;
 }
 
 .menu__link {
