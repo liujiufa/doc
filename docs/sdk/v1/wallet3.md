@@ -1,7 +1,7 @@
 ---
 id: How
 title: 如何为您的加密钱包提供资金?
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 每个钱包都不同，但有两种主要方式可以为您的加密钱包提供资金：

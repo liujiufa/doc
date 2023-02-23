@@ -1,6 +1,7 @@
 ---
 id: useful
 title: gas费的存在是有意义的
+sidebar_position: 4
 ---
 
 1. 奖励矿工为交易作出的努力，矿工更有动力。

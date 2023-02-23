@@ -1,6 +1,6 @@
 ---
 id: research
-title: NFT技术的影响
+title: NFT 技术的影响
 sidebar_position: 4
 ---
 
